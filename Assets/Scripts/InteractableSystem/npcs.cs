@@ -18,9 +18,9 @@ public class npcs : Interactable
 
     public override void Interact()
     {
-        base.Interact();
-
         intro.SetBooleanVariable("interact", true);
+        base.Interact();
+        
     }
 
 
