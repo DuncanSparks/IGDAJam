@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject pauseMenu;
     public void toMainMenu()
     {
          SceneManager.LoadScene(0);
@@ -23,5 +25,13 @@ public class PauseMenu : MonoBehaviour
     public void disableScreen(GameObject screen)
     {
         screen.SetActive(false);
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf == false)
+        {
+            pauseMenu.SetActive(pauseMenu);
+        }
     }
 }
